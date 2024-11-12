@@ -8,21 +8,21 @@
 import UIKit
 
 class ViewController: UIViewController {
-var counter = 0
-@IBOutlet weak var counterValue: UILabel!
-    
-    @IBAction func increaseButton(_ sender: Any) {
-counter += 1
-counterValue.text = "Значение счётчика: \(counter)"
-    }
-    
+    // MARK: - IBOutlet
+    @IBOutlet private weak var counterLabel: UILabel!
+    // MARK: - Private Variables
+    private var counter = 0
+    // MARK: - Public methods
 override func viewDidLoad() {
-super.viewDidLoad()
-    counterValue.text = "Значение счетчика \(counter)"
-    
-        // Do any additional setup after loading the view.
+    super.viewDidLoad()
+    counterLabel.text = "Значение счетчика \(counter)"
+}
+    //MARK: - IBAction
+    @IBAction private func increaseButton(_ sender: Any) {
+        counter += 1
+        counterLabel.text = "Значение счётчика: \(counter)"
     }
-
-
+    
+    
 }
 
